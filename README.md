@@ -17,7 +17,7 @@ This repository contains reproducible Jupyter notebooks and standalone scripts c
 
 ##  Repository Structure
 
-```
+```text
 ├── LLM-RAG/
 │   ├── 01_rag_chunking_embeddings.ipynb      # Recursive splitting & context overlap
 │   ├── 02_vectordb_chroma_cosine.ipynb        # Vector search with ChromaDB & metric evaluations
