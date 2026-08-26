@@ -1,86 +1,69 @@
-```markdown
+Markdown
 # Applied Defense AI Lab
 
 Hands-on implementations, models, and pipelines built for defense-oriented AI workloads—focusing on Computer Vision, RAG architectures, and Sensor Fusion.
 
 ---
 
-##  Overview
+## 🎯 Overview
 
-This repository contains reproducible Jupyter notebooks and standalone scripts covering tactical AI use cases:
+This repository contains reproducible Jupyter notebooks covering core defense and security AI concepts:
 
-* **Perception & Tracking:** Object detection and multi-target tracking under real-time constraints.
-* **LLM & Knowledge Retrieval:** Deterministic RAG pipelines and function calling for mission documentation.
-* **Sensor Fusion:** Filtering and state estimation across noisy sensor telemetry.
+* **Perception & Tracking:** Real-time object detection (YOLOv8) and multi-target tracking (ByteTrack) under occlusion scenarios.
+* **Generative AI & RAG:** Grounded document retrieval with ChromaDB, Cosine Similarity, strict hallucination prevention, and agentic tool calling.
+* **Sensor Fusion & Edge AI:** Discrete/Extended Kalman Filtering (EKF), visual navigation principles, ONNX conversion, and time-series telemetry anomaly detection.
 
 ---
 
-##  Repository Structure
+## 📂 Repository Structure
 
 ```text
-├── LLM-RAG/
-│   ├── 01_rag_chunking_embeddings.ipynb      # Recursive splitting & context overlap
-│   ├── 02_vectordb_chroma_cosine.ipynb        # Vector search with ChromaDB & metric evaluations
-│   ├── 03_prompt_hallucination_prevention.ipynb # Strict grounding & zero-temp configurations
-│   └── 04_agentic_tool_calling.ipynb          # Tool calling & ReAct decision loop
-│
 ├── ComputerVision-ObjectDetection-YOLO/
-│   ├── 01_iou_metric_calculation.ipynb        # Custom IoU, Precision, Recall & mAP calculations
-│   ├── 02_yolo_inference_nms.ipynb            # YOLOv8 inference pipeline & NMS thresholding
-│   └── 03_object_tracking_bytetrack.ipynb     # ByteTrack / DeepSORT tracking & ID management
+│   ├── iou_metric_calculation.ipynb        # Custom IoU, Precision, Recall & evaluation logic
+│   ├── yolo_inference_nms.ipynb            # YOLOv8 inference pipeline & NMS thresholding
+│   └── object_tracking_bytetrack.ipynb     # ByteTrack tracking & persistent ID association
 │
-└── Sensor-Fusion/ (In Progress)
-    ├── 01_kalman_filter_sensor_fusion.ipynb   # 1D/2D Kalman Filter state estimation
-    └── 02_imu_gps_fusion.ipynb                # IMU + GPS telemetry fusion
+├── LLM-RAG/
+│   ├── rag_chunking_embeddings.ipynb       # Recursive text splitting & context overlap
+│   ├── vectordb_chroma_cosine.ipynb        # ChromaDB vector indexing & cosine similarity search
+│   ├── prompt_hallucination_prevention.ipynb # Strict grounding & zero-temperature constraints
+│   └── agentic_tool_calling.ipynb          # Autonomous agent planning & Python tool calling
+│
+└── SensorFusion-AutonomousSystems/
+    ├── kalman_filter_simulation.ipynb      # 1D Kalman Filter state estimation & noise filtering
+    ├── multi_sensor_fusion_ekf.ipynb       # Multi-sensor fusion (IMU + Visual Odometry) via EKF
+    └── edge_optimization_anomaly.ipynb     # ONNX model export & telemetry anomaly detection (Z-Score)
+🚀 Key Modules & Technical Capabilities
+1. Computer Vision & Target Tracking
+Object Detection: YOLOv8 inference pipeline optimized for speed and recall.
 
-```
+Metrics: Ground-truth vs prediction IoU calculations, confidence filtering, and Non-Maximum Suppression (NMS).
 
----
+Multi-Object Tracking (MOT): Temporal identity preservation and occlusion handling via ByteTrack.
 
-##  Core Focus Areas
+2. LLMs, RAG & Agentic Systems
+Chunking & Embeddings: Recursive text splitting with overlap tuning to prevent contextual degradation.
 
-### 1. Computer Vision & Target Tracking
+Semantic Search: Vector indexing with ChromaDB using cosine similarity metrics.
 
-* **Detection:** YOLOv8 integration for aerial/ground asset identification with optimized inference parameters.
-* **Metrics:** Custom IoU implementation, confusion matrix metrics, and mAP evaluation curves.
-* **Tracking:** Multi-Object Tracking (MOT) leveraging ByteTrack and DeepSORT logic to prevent ID switches during occlusions.
+Hallucination Mitigation: System-prompt engineering and zero-temperature configurations for deterministic technical QA.
 
-### 2. LLMs, RAG & Agents
+Agentic Workflows: Function calling mechanisms enabling LLMs to execute exact mathematical and sensor tools.
 
-* **Chunking Strategies:** Semantic-preserving text splitting with overlap tuning to prevent information loss.
-* **Embeddings & Search:** Vector indexing with ChromaDB using cosine similarity.
-* **Reliability:** System-level prompt constraints to eliminate hallucinations in technical query answering.
-* **Tool Calling:** Interfacing LLM outputs directly with Python functions for deterministic mathematical execution.
+3. Sensor Fusion & Edge AI
+State Estimation: Discrete Kalman Filter and Extended Kalman Filter (EKF) models for position and velocity estimation.
 
-### 3. Sensor Fusion & Navigation
+GNSS-Denied Navigation: Multi-modal sensor integration combining high-rate IMU data with visual odometry.
 
-* **State Estimation:** Discrete Kalman Filter implementation for position/velocity tracking.
-* **Multi-Modal Data:** Combining low-rate GPS telemetry with high-rate IMU acceleration data.
+Edge Optimization: PyTorch model conversion to ONNX format for low-latency embedded inference.
 
----
+Anomaly Detection: Statistical Z-Score modeling on real-time telemetry streams.
 
-##  Quick Run
+🛠️ Stack & Dependencies
+Languages: Python 3.10+
 
-All notebooks are self-contained and run directly in Google Colab (GPU recommended for YOLO workflows).
+Deep Learning & Vision: PyTorch, Ultralytics (YOLOv8), OpenCV
 
-To run locally:
+NLP & Vector DB: LangChain, ChromaDB, Sentence-Transformers
 
-```bash
-git clone [https://github.com/mburakuyanik/Applied-Defense-AI-Lab.git](https://github.com/mburakuyanik/Applied-Defense-AI-Lab.git)
-cd Applied-Defense-AI-Lab
-
-pip install torch torchvision ultralytics chromadb langchain-text-splitters opencv-python filterpy
-
-```
-
----
-
-##  Stack
-
-* **Language:** Python 3.10+
-* **Frameworks:** PyTorch, Ultralytics (YOLO), LangChain
-* **Databases & Tools:** ChromaDB, OpenCV, NumPy, SciPy, FilterPy
-
-```
-
-```
+Math & Filtering: NumPy, Matplotlib, SciPy
