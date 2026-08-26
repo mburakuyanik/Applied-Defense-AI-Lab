@@ -1,11 +1,10 @@
-Markdown
 # Applied Defense AI Lab
 
 Hands-on implementations, models, and pipelines built for defense-oriented AI workloads—focusing on Computer Vision, RAG architectures, and Sensor Fusion.
 
 ---
 
-## 🎯 Overview
+##  Overview
 
 This repository contains reproducible Jupyter notebooks covering core defense and security AI concepts:
 
@@ -15,7 +14,7 @@ This repository contains reproducible Jupyter notebooks covering core defense an
 
 ---
 
-## 📂 Repository Structure
+##  Repository Structure
 
 ```text
 ├── ComputerVision-ObjectDetection-YOLO/
@@ -33,7 +32,8 @@ This repository contains reproducible Jupyter notebooks covering core defense an
     ├── kalman_filter_simulation.ipynb      # 1D Kalman Filter state estimation & noise filtering
     ├── multi_sensor_fusion_ekf.ipynb       # Multi-sensor fusion (IMU + Visual Odometry) via EKF
     └── edge_optimization_anomaly.ipynb     # ONNX model export & telemetry anomaly detection (Z-Score)
-🚀 Key Modules & Technical Capabilities
+
+ Key Modules & Technical Capabilities
 1. Computer Vision & Target Tracking
 Object Detection: YOLOv8 inference pipeline optimized for speed and recall.
 
@@ -59,7 +59,7 @@ Edge Optimization: PyTorch model conversion to ONNX format for low-latency embed
 
 Anomaly Detection: Statistical Z-Score modeling on real-time telemetry streams.
 
-🛠️ Stack & Dependencies
+ Stack & Dependencies
 Languages: Python 3.10+
 
 Deep Learning & Vision: PyTorch, Ultralytics (YOLOv8), OpenCV
